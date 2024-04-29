@@ -25,7 +25,6 @@ hubspot_access_token = os.getenv("HUBSPOT_ACCESS_TOKEN")
 slack_webhook_url = os.getenv("SLACK_WEBHOOK_URL")
 
 
-@app.before_request
 def verification():
     app.logger.debug('Verification started')
     received_data = request.get_data(as_text=True)
@@ -44,8 +43,14 @@ def hello_world():  # put application's code here
     return 'Hello World!'
 
 
+@app.route("/flask-health-check")
+def flask_health_check():
+    return jsonify({"status": "ok"})
+
+
 @app.post("/dadada/support/form")
 def support_form():
+    verification()
     received_data = request.get_json()
     chatgpt = ChatGPT(aoai_api_key)
     aisearch = AiSearch(service_endpoint, index_name, key)
@@ -53,7 +58,6 @@ def support_form():
     gmail = Gmail()
     slack = Slack(slack_webhook_url)
     result = chatgpt.generate(received_data["content"])
-
     return jsonify("waowao")
 
 

@@ -1,0 +1,15 @@
+services:
+  flask-app:
+    build: .
+    restart: always
+    ports:
+      - '8081:8081'
+    healthcheck:
+      test: ["CMD-SHELL", "curl --silent --fail localhost:8081/flask-health-check || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    command: gunicorn -w 3 -t 60 -b 0.0.0.0:8081 app:app --log-file - --access-logfile - --error-logfile -
+networks:
+  appnet_dadada:
+    driver: bridge
