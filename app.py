@@ -43,7 +43,7 @@ def hello_world():  # put application's code here
     return 'Hello World!'
 
 
-@app.route("/flask-health-check")
+@app.route("/dadada/flask-health-check")
 def flask_health_check():
     return jsonify({"status": "ok"})
 
@@ -58,7 +58,7 @@ def support_form():
     gmail = Gmail()
     slack = Slack(slack_webhook_url)
     result = chatgpt.generate(received_data["content"])
-    return jsonify("waowao")
+    return jsonify("support/form!!!")
 
 
 if __name__ == '__main__':

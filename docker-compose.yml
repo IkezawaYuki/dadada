@@ -5,7 +5,7 @@ services:
     ports:
       - '8081:8081'
     healthcheck:
-      test: ["CMD-SHELL", "curl --silent --fail localhost:8081/flask-health-check || exit 1"]
+      test: ["CMD-SHELL", "curl --silent --fail localhost:8081/dadada/flask-health-check || exit 1"]
       interval: 10s
       timeout: 10s
       retries: 3
