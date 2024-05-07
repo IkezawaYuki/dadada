@@ -28,3 +28,6 @@ class Slack:
             "username": "DADADA",
             "text": message
         })
+
+    def notify_slack(self):
+        pass

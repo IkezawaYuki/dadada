@@ -1,0 +1,56 @@
+<svg id="syaban-heading.svg" xmlns="http://www.w3.org/2000/svg" width="806" height="176.531" viewBox="0 0 806 176.531">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 6.209px;
+        font-family: TBUDGoStd;
+        font-weight: 800;
+      }
+
+      .cls-2 {
+        fill: #f90;
+        font-size: 4.103px;
+      }
+
+      .cls-3, .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: #000;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-3, .cls-4 {
+        fill-rule: evenodd;
+      }
+
+      .cls-5, .cls-6, .cls-7 {
+        font-size: 4.627px;
+      }
+
+      .cls-6 {
+        fill: #fc0;
+      }
+
+      .cls-6, .cls-7, .cls-8 {
+        font-family: "Source Han Sans JP";
+        font-weight: 700;
+      }
+
+      .cls-8 {
+        font-size: 8.538px;
+      }
+    </style>
+  </defs>
+  <text id="ホームページスタンダードpresents" class="cls-1" transform="translate(32.655 99.324) scale(8.125)">ホームページスタンダード<tspan class="cls-2">presents</tspan></text>
+  <path id="長方形_956" data-name="長方形 956" class="cls-3" d="M444.1,54.233h41.418V95.651H444.1V54.233Z" transform="translate(0 -53.469)"/>
+  <path id="長方形_956_のコピー" data-name="長方形 956 のコピー" class="cls-3" d="M404.587,54.233h41.418V95.651H404.587V54.233Z" transform="translate(0 -53.469)"/>
+  <path id="長方形_956_のコピー_3" data-name="長方形 956 のコピー 3" class="cls-4" d="M363.342,55.041l41.388-1.587,1.587,41.388-41.388,1.587Z" transform="translate(0 -53.469)"/>
+  <text id="新標準" class="cls-5" transform="translate(367.219 34.546) scale(7.678)"><tspan class="cls-6">新</tspan>標準</text>
+  <text id="ホームページ制作の" class="cls-7" transform="translate(34.92 34.546) scale(7.678)">ホームページ制作の</text>
+  <path id="長方形_40" data-name="長方形 40" class="cls-4" d="M-42.525,174H481v56H-42.525V174Z" transform="translate(0 -53.469)"/>
+  <text id="会社設立応援キャンペーン" class="cls-8" transform="translate(35.395 162.387) scale(4.244 4.259)">会社設立応援キャンペーン</text>
+</svg>

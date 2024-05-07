@@ -1,7 +1,7 @@
 import os
 import logging
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from dotenv import load_dotenv
 import hmac
 import hashlib
@@ -48,6 +48,11 @@ def flask_health_check():
     return jsonify({"status": "ok"})
 
 
+@app.get("/dadada/support/form")
+def support_form_page():
+    return render_template('index.html')
+
+
 @app.post("/dadada/support/form")
 def support_form():
     verification()
@@ -58,6 +63,8 @@ def support_form():
     gmail = Gmail()
     slack = Slack(slack_webhook_url)
     result = chatgpt.generate(received_data["content"])
+
+
     return jsonify("support/form!!!")
 
 

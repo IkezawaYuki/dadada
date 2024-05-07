@@ -1,20 +1,28 @@
 from openai import AzureOpenAI
 
 
-functions = [
+tools = [
     {
-        'name': 'support_madoguchi',
-        'description': '戸籍に関する手続きを扱いたい時に呼び出す。',
-        'parameters': {
-            'type': 'object',
-            'properties': {
-                'name': {
-                    'type': 'string',
-                    'description': '照会者の名前',
+        "type": "function",
+        "function": {
+            "name": "notify_slack",
+            "description": "If you cannot answer the question with the information you have, call this method to report it to your superior. Summarize the question.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "content": {
+                      "type": "string",
+                      "description": "The content of the question."
+                    },
+                    "content_summary": {
+                        "type": "string",
+                        "description": "Summarize the question.",
+                    },
                 },
+                "required": ["content", "content_summary"],
             },
         },
-    },
+    }
 ]
 
 
@@ -52,5 +60,7 @@ class ChatGPT:
             frequency_penalty=0,
             presence_penalty=0,
             stop=None,
+            tools=tools,
+            tool_choice="auto",  # auto is default, but we'll be explicit
         )
         return completion

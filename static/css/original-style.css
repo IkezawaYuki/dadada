@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+.entry-content > *:last-child:not(.contact) {
+    margin-bottom: 40px;
+}
+
+.form-block {
+    max-width: 700px;
+    margin: 0 auto 80px;
+}
+
+#form label {
+    margin-bottom: 4px;
+}
+#form fieldset {
+    margin: 0;
+}
+#form input[type="text"],
+#form input[type="tel"],
+#form input[type="email"],
+#form textarea {
+    margin: 0!important;
+    width: 100%;
+}
+#form .required::after {
+    content: "必須";
+    display: inline-block;
+    padding: 0 8px;
+    margin: 0 0 0 8px;
+    background-color: #fdd;
+    color: #f42a2a;
+    font-weight: bold;
+    font-size: 80%;
+    line-height: 1.6em;
+}
+@media screen and (min-width: 768px) {
+    #form .row {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
+#form .actions {
+    text-align: center;
+}
+#form button.submit {
+    font-size: 120%;
+    padding: 0.8em 1.6em;
+    vertical-align: middle;
+}
+#form button.submit:hover {
+    background-color: var(--nv-primary-accent);
+}
+#form textarea {
+    display: block;
+}
+#form input + .message,
+#form textarea + .message {
+    display: block;
+    min-height: 2em;
+    font-size: 0.7em;
+    line-height: 1.5em;
+}
+#form input.js-completed,
+#form textarea.js-completed {
+    background-color: #2e996e09;
+    border-color: #2e996e55;
+}
+#form input.js-completed + .message:after,
+#form textarea.js-completed + .message:after {
+    color: var(--nv-primary-accent);
+    content: "✓ 入力済み";
+}
+#form input.js-error,
+#form textarea.js-error {
+    background-color: #f42a2a09;
+    border-color: #f42a2a;
+}
+#form input.js-error + .message,
+#form textarea.js-error + .message {
+    color: #f42a2a;
+}
+
+#form button[type="submit"]:disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+#form .hs-form-booleancheckbox {
+    margin-top: 20px;
+}
+#form .actions {
+    margin-top: 32px;
+}

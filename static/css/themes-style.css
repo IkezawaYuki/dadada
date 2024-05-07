@@ -1,0 +1,313 @@
+@charset "UTF-8";
+/*
+Theme Name: hp-standard-child
+Template: hp-standard
+*/
+@media (min-width: 960px) {
+  .pc-hide {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 959px) {
+  .tablet-hide {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .sp-hide {
+    display: none !important;
+  }
+}
+.wp-block-group h1, .wp-block-group h2, .wp-block-group h3, .wp-block-group h4, .wp-block-group h5, .wp-block-group h6 {
+  margin-bottom: 0.8em;
+}
+.wp-block-group + .wp-block-group {
+  margin-top: 4rem;
+}
+
+.wp-block-kadence-posts.grid-cols {
+  row-gap: 1rem;
+}
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/**
+ * main と footer の余白
+ */
+.entry-content > *:last-child:not(.contact) {
+  margin-bottom: 8rem;
+}
+@media (max-width: 767px) {
+  .entry-content > *:last-child:not(.contact) {
+    margin-bottom: 4rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 959px) {
+  .entry-content > *:last-child:not(.contact) {
+    margin-bottom: 6rem;
+  }
+}
+
+.entry-meta {
+  padding: 0 1em 0 0;
+  margin: 0 !important;
+}
+
+.single-page-container .alignfull {
+  padding: 0;
+}
+
+.wp-block-table table {
+  margin: 0;
+}
+.wp-block-table.is-style-border table {
+  border: none;
+}
+.wp-block-table.is-style-border th, .wp-block-table.is-style-border td {
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: none;
+}
+.wp-block-table.is-style-border th:first-child, .wp-block-table.is-style-border td:first-child {
+  white-space: nowrap;
+}
+.wp-block-table.is-style-normal th, .wp-block-table.is-style-normal td {
+  padding: 10px;
+  border: 2px solid #fff;
+  background-color: var(--nv-light-bg);
+}
+.wp-block-table.is-style-normal th:first-child, .wp-block-table.is-style-normal td:first-child {
+  white-space: nowrap;
+  background-color: var(--nv-secondary-accent);
+}
+@media (max-width: 767px) {
+  .wp-block-table.is-style-normal.is-sp-table-block th, .wp-block-table.is-style-normal.is-sp-table-block td {
+    border-bottom: none;
+  }
+  .wp-block-table.is-style-normal.is-sp-table-block th:first-child, .wp-block-table.is-style-normal.is-sp-table-block td:first-child {
+    border-top-width: 10px;
+  }
+  .wp-block-table.is-style-normal.is-sp-table-block th:nth-child(n+2), .wp-block-table.is-style-normal.is-sp-table-block td:nth-child(n+2) {
+    border-top: none;
+  }
+}
+@media (max-width: 767px) {
+  .wp-block-table.is-sp-table-block table, .wp-block-table.is-sp-table-block tr, .wp-block-table.is-sp-table-block th, .wp-block-table.is-sp-table-block td {
+    display: block;
+  }
+}
+
+.wp-block-button.is-style-outline-maru .wp-block-button__link {
+  background: none;
+  border: 2px solid var(--nv-text-color);
+  color: var(--nv-text-color);
+  width: 280px;
+  max-width: 100%;
+  display: block;
+  font-weight: normal;
+  font-size: inherit;
+  letter-spacing: 0.02em;
+  border-radius: 50px;
+}
+.wp-block-button.is-style-outline-maru .wp-block-button__link:hover {
+  background-color: var(--nv-text-color);
+  color: var(--nv-site-bg);
+}
+.wp-block-button.is-style-outline-maru-white .wp-block-button__link {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  width: 280px;
+  max-width: 100%;
+  display: block;
+  font-weight: normal;
+  font-size: inherit;
+  letter-spacing: 0.02em;
+  border-radius: 50px;
+}
+.wp-block-button.is-style-outline-maru-white .wp-block-button__link:hover {
+  background-color: #fff;
+  color: var(--nv-text-color);
+}
+
+/**
+ * 吹き出しシンプル
+ */
+.is-fukidashi-simple strong {
+  display: inline-block;
+}
+.is-fukidashi-simple strong:before, .is-fukidashi-simple strong:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 12px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.is-fukidashi-simple strong:before {
+  margin-right: 16px;
+  background-image: url(../image/bg_icon-fukidashi-left.png);
+}
+.is-fukidashi-simple strong:after {
+  margin-left: 16px;
+  background-image: url(../image/bg_icon-fukidashi-right.png);
+}
+
+/**
+* 区切りオリジナル
+*/
+@media (min-width: 768px) {
+  .is-diver-original > * {
+    position: relative;
+  }
+  .is-diver-original > *:before, .is-diver-original > *:after {
+    content: "";
+    background: url(../image/bg_icon-dot.png) repeat left top;
+    position: absolute;
+  }
+  .is-diver-original > *:before {
+    width: 4px;
+    height: 124px;
+    left: calc(50% - 2px);
+    bottom: -62px;
+  }
+  .is-diver-original > *:after {
+    height: 4px;
+    width: 124px;
+    bottom: -2px;
+    left: calc(50% - 62px);
+  }
+}
+
+/**
+* 数字文字を大きく
+*/
+.is-highligter-flow-title .kt-highlight {
+  margin-right: 10px;
+  padding: 0 10px;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .is-highligter-flow-title .kt-highlight {
+    display: none;
+  }
+}
+
+/**
+* 数字文字を大きく
+*/
+.num-large {
+  margin: 0 5px;
+  display: inline-block;
+  font-size: 200%;
+  font-family: "roboto";
+}
+
+/**
+* 注釈(文字小さく)
+*/
+.is-annotation {
+  font-size: 80%;
+}
+
+/**
+ * 下層見出しの英語タイトルの色
+ */
+.sub-heding-color {
+  color: var(--nv-secondary-accent);
+}
+
+/**
+ * ソーシャルアイコン
+ */
+.wp-block-kadence-icon.social-color .kt-svg-icon-link {
+  color: #9a9a9a;
+  transition: 0.15s;
+}
+.wp-block-kadence-icon.social-color .kt-svg-icon-link:hover {
+  color: #ccc;
+}
+
+/**
+ * フッター余白
+ */
+.footer-top-inner {
+  padding-top: 0.5rem;
+}
+
+/**
+ * footer やすお
+ */
+.is-bg-yasuo-vr {
+  padding: 230px 0 170px !important;
+  background: url(../image/top-footer_bg-yasuo.png) no-repeat left bottom #ffcb2a;
+}
+@media screen and (max-width: 1000px) {
+  .is-bg-yasuo-vr {
+    padding: 170px 0 70px !important;
+    background-size: auto 330px;
+  }
+}
+@media (max-width: 767px) {
+  .is-bg-yasuo-vr {
+    padding: 30px 0 50vw !important;
+    background-size: 66% auto;
+    background-position: left 10px bottom -4px;
+  }
+}
+
+@media (max-width: 767px) {
+  #site-footer .item--inner.has_menu {
+    display: block;
+  }
+  #site-footer .component-wrap {
+    display: block;
+  }
+  #site-footer .nav-ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  #site-footer .nav-ul a {
+    display: inline-block;
+    padding: 0 16px;
+  }
+  #site-footer .menu-item {
+    margin-right: 0;
+  }
+}
+#site-footer a[target=_blank] {
+  position: relative;
+  padding-right: 16px;
+}
+#site-footer a[target=_blank]:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: calc(50% - 4px);
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: no-repeat center/8px 8px url(../image/icon-blank.png);
+  opacity: 0.5;
+}
+
+/**
+ * お問い合わせページのお問い合わせボタンを非表示
+ */
+.page-id-216 #header-grid .builder-item.offset-1 {
+  display: none;
+}
+
+.nv-single-page-wrap {
+  margin-bottom: 0 !important;
+}
