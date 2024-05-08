@@ -1,7 +1,7 @@
 import os
 import logging
 
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect
 from dotenv import load_dotenv
 import hmac
 import hashlib
@@ -39,7 +39,7 @@ def verification():
 
 
 @app.route('/')
-def hello_world():  # put application's code here
+def hello_world():
     return 'Hello World!'
 
 
@@ -53,19 +53,29 @@ def support_form_page():
     return render_template('index.html')
 
 
+@app.get("/dadada/support/thank_you")
+def support_thank_you_page():
+    return render_template('thank_you.html')
+
+
 @app.post("/dadada/support/form")
 def support_form():
-    verification()
-    received_data = request.get_json()
+    # verification()
+    form_data = request.form.to_dict()
     chatgpt = ChatGPT(aoai_api_key)
     aisearch = AiSearch(service_endpoint, index_name, key)
     hubspot = HubspotClient(hubspot_access_token)
     gmail = Gmail()
+    gmail.follow_up_mail(form_data["email"])
     slack = Slack(slack_webhook_url)
-    result = chatgpt.generate(received_data["content"])
-
-
-    return jsonify("support/form!!!")
+    result = chatgpt.generate(form_data["content"])
+    if result.choices[0].message.function_call:
+        print("function call!!")
+        slack.send_message("test test")
+    else:
+        body_message = result.choices[0].message.content
+        gmail.create_drafts(form_data["email"], body_message)
+    return redirect("/dadada/support/thank_you")
 
 
 if __name__ == '__main__':

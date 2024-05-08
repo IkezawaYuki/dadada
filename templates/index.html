@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="ja" prefix="og: https://ogp.me/ns#">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <title>お問い合わせフォーム（サポート） - ホームページスタンダード</title>
-    <meta name="description" content="お問い合わせ（サポート） Contact TOP &gt; ご契約のお客様へ &gt; お問い合わせフォーム（" />
-    <meta name="robots" content="max-image-preview:large" />
-
-    <link rel='stylesheet' href="{{ url_for('static', filename='css/themes-style.css') }}" type='text/css' media='all' />
-    <link rel='stylesheet' href="{{ url_for('static', filename='css/style-main.min.css') }}" type='text/css' media='all' />
-    <link rel='stylesheet' href="{{ url_for('static', filename='css/neve-style-inline.css') }}" type='text/css' media='all' />
-    <link rel='stylesheet' href="{{ url_for('static', filename='css/kadence_blocks_css-inline.css') }}" type='text/css' media='all' />
-    <link rel='stylesheet' href="{{ url_for('static', filename='css/original-style.css') }}" type='text/css' media='all' />
-</head>
-
-<body
-    class="page-template-default page page-id-1758 page-child parent-pageid-1601 logged-in admin-bar no-customize-support wp-custom-logo nv-sidebar-full-width nv-without-header nv-without-title menu_sidebar_pull_right"
-    id="neve_body">
-    <div class="wrapper">
-        <header class="header" role="banner"> <a class="neve-skip-link show-on-focus" href="#content" tabindex="0"> Skip
-                to content </a></header>
-        <main id="content" class="neve-main" role="main">
+{% block content %}
+	<main id="content" class="neve-main" role="main">
             <div class="container single-page-container">
                 <div class="row">
                     <div class="nv-single-page-wrap col">
@@ -64,7 +43,7 @@
                 <div class="row">
                     <div class="nv-single-page-wrap col">
                         <div class="form-block">
-                            <form id="form">
+                            <form id="form" action="/dadada/support/form" method="post">
                                 <fieldset>
                                     <label id="label-input-company" class="" placeholder="Enter your 会社名"
                                         for="input-company">
@@ -172,7 +151,6 @@
             </div>
 
         </main>
-    </div>
     <script>
         const inputs = [
             ...document.getElementsByTagName("input"),
@@ -221,7 +199,7 @@
         form.addEventListener("submit", (event) => {
             event.preventDefault(); // フォームのデフォルトの動作をキャンセルする
             if (checkValidate()) {
-                form.submit(); // バリデーションが通過した場合にフォームを送信する
+                form.submit();
             }
         });
 
@@ -232,6 +210,4 @@
             button.disabled = !privacyPolicyCheckbox.checked || !checkValidate();
         });
     </script>
-</body>
-
-</html>
+{% endblock %}
