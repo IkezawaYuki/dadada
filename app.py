@@ -40,6 +40,11 @@ def verification():
 
 @app.route('/')
 def hello_world():
+    hb_client = HubspotClient(hubspot_access_token)
+    ticket_id = hb_client.create_ticket("Test [ikezawa_test]")
+    print(ticket_id)
+    # contact_id = hb_client.search_contact("yuki.ikezawa@strategy-drive.jp")
+    # hb_client.associate(ticket_id, contact_id)
     return 'Hello World!'
 
 
@@ -75,6 +80,7 @@ def support_form():
     else:
         body_message = result.choices[0].message.content
         gmail.create_drafts(form_data["email"], body_message)
+        hubspot.create_ticket(form_data["content"])
     return redirect("/dadada/support/thank_you")
 
 
